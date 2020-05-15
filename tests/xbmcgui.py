@@ -9,6 +9,20 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 from xbmcextra import kodi_to_ansi
 
 
+class Dialog:
+    """A reimplementation of the xbmcgui Dialog class"""
+
+    def __init__(self):
+        """A stub constructor for the xbmcgui Dialog class"""
+
+    @staticmethod
+    def ok(heading, message='', line1='', line2='', line3=''):
+        """A stub implementation for the xbmcgui Dialog class ok() method"""
+        heading = kodi_to_ansi(heading)
+        message = kodi_to_ansi(message)
+        print('\033[37;44;1mOK:\033[35;49;1m [%s] \033[37;1m%s\033[39;0m' % (heading, message or line1))
+
+
 class ListItem:
     """A reimplementation of the xbmcgui ListItem class"""
 
